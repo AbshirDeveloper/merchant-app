@@ -10,9 +10,6 @@ const useStyles = createStyles({
   root: {
     paddingTop: 56,
     height: '100%'
-    // [theme.breakpoints.up('sm')]: {
-    //   paddingTop: 64
-    // }
   },
   shiftContent: {
     paddingLeft: 240
@@ -21,12 +18,6 @@ const useStyles = createStyles({
     height: '100%'
   }
 });
-
-// const theme = useTheme();
-// const isDesktop = useMediaQuery(theme.breakpoints.up('lg'), {
-//   defaultMatches: true
-// });
-// const classes = useStyles();
 
 class Main extends React.Component {
   constructor(props) {
@@ -51,8 +42,6 @@ class Main extends React.Component {
   };
 
   render() {
-    // const isDesktop = true;
-    // const shouldOpenSidebar = isDesktop ? true : this.state.openSidebar;
     const { classes, children } = this.props;
     return (
       <div
