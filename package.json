@@ -1,11 +1,11 @@
 {
-  "name": "react-material-dashboard",
-  "author": "DeviasIO",
-  "email": "contact@devias.io",
+  "name": "merchant",
+  "author": "Abshir Jama",
+  "email": "abshir.uideveloper@gmail.com",
   "licence": "MIT",
   "version": "0.3.0",
   "private": false,
-  "main": "public/electron.js",
+  "main": "public/main.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

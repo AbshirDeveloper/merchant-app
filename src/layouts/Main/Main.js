@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/styles';
+import { createStyles, useTheme, withStyles } from '@material-ui/styles';
 import { useMediaQuery } from '@material-ui/core';
 
 import { Sidebar, Topbar, Footer } from './components';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = createStyles({
   root: {
     paddingTop: 56,
-    height: '100%',
-    [theme.breakpoints.up('sm')]: {
-      paddingTop: 64
-    }
+    height: '100%'
+    // [theme.breakpoints.up('sm')]: {
+    //   paddingTop: 64
+    // }
   },
   shiftContent: {
     paddingLeft: 240
@@ -20,52 +20,63 @@ const useStyles = makeStyles(theme => ({
   content: {
     height: '100%'
   }
-}));
+});
 
-const Main = props => {
-  const { children } = props;
+// const theme = useTheme();
+// const isDesktop = useMediaQuery(theme.breakpoints.up('lg'), {
+//   defaultMatches: true
+// });
+// const classes = useStyles();
 
-  const classes = useStyles();
-  const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up('lg'), {
-    defaultMatches: true
-  });
+class Main extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      openSidebar: false,
+      isDesktop: false
+    };
+  }
 
-  const [openSidebar, setOpenSidebar] = useState(false);
-
-  const handleSidebarOpen = () => {
-    setOpenSidebar(true);
+  handleSidebarOpen = () => {
+    this.setState({
+      openSidebar: !this.state.openSidebar,
+      isDesktop: !this.state.isDesktop
+    });
   };
 
-  const handleSidebarClose = () => {
-    setOpenSidebar(false);
+  handleSidebarClose = () => {
+    this.setState({
+      openSidebar: false
+    });
   };
 
-  const shouldOpenSidebar = isDesktop ? true : openSidebar;
-
-  return (
-    <div
-      className={clsx({
-        [classes.root]: true,
-        [classes.shiftContent]: isDesktop
-      })}
-    >
-      <Topbar onSidebarOpen={handleSidebarOpen} />
-      <Sidebar
-        onClose={handleSidebarClose}
-        open={shouldOpenSidebar}
-        variant={isDesktop ? 'persistent' : 'temporary'}
-      />
-      <main className={classes.content}>
-        {children}
-        <Footer />
-      </main>
-    </div>
-  );
-};
+  render() {
+    // const isDesktop = true;
+    // const shouldOpenSidebar = isDesktop ? true : this.state.openSidebar;
+    const { classes, children } = this.props;
+    return (
+      <div
+        className={clsx({
+          [classes.root]: true,
+          [classes.shiftContent]: this.state.isDesktop
+        })}>
+        <Topbar onSidebarOpen={this.handleSidebarOpen} />
+        <Sidebar
+          onClose={this.handleSidebarClose}
+          open={this.state.openSidebar}
+          variant={this.state.isDesktop ? 'persistent' : 'temporary'}
+        />
+        <main className={classes.content}>
+          {children}
+          <Footer />
+        </main>
+      </div>
+    );
+  }
+}
 
 Main.propTypes = {
   children: PropTypes.node
 };
 
-export default Main;
+export default withStyles(useStyles)(Main);
