@@ -1,0 +1,52 @@
+{
+    "columnDefs": [
+        {
+            "DisplayName": "Taariikh",
+            "Name": "taariikh",
+            "CanShow": true
+        },
+        {
+            "DisplayName": "Magac",
+            "Name": "magac",
+            "CanShow": true
+        },
+        {
+            "DisplayName": "Taleefon",
+            "Name": "talefon",
+            "CanShow": true
+        },
+        {
+            "DisplayName": "Isticmaalay",
+            "Name": "isticmaalay",
+            "CanShow": true
+        },
+        {
+            "DisplayName": "Baaqi",
+            "Name": "baaqi",
+            "CanShow": true
+        }
+    ],
+    "rowData": [
+        {
+            "taariikh": "01/01/1970",
+            "magac": "Abshir Jama",
+            "taleefon": "3124093514",
+            "isticmaalay": "14",
+            "baaqi": "54"
+        },
+        {
+            "taariikh": "01/01/1970",
+            "magac": "Abshir Jama",
+            "taleefon": "3124093514",
+            "isticmaalay": "14",
+            "baaqi": "54"
+        },
+        {
+            "taariikh": "01/01/1970",
+            "magac": "Abshir Jama",
+            "taleefon": "3124093514",
+            "isticmaalay": "14",
+            "baaqi": "54"
+        }
+    ]
+}

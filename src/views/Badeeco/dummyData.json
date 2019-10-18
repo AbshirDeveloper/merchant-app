@@ -1,0 +1,45 @@
+{
+    "columnDefs": [
+        {
+            "DisplayName": "Badeeco",
+            "Name": "badeeco",
+            "CanShow": true
+        },
+        {
+            "DisplayName": "Barcode",
+            "Name": "barcode",
+            "CanShow": true
+        },
+        {
+            "DisplayName": "Intaxabo kataal",
+            "Name": "intaxabo_kataal",
+            "CanShow": true
+        }
+    ],
+    "rowData": [
+        {
+            "id": 1,
+            "badeeco": "Saliid",
+            "barcode": "7657657",
+            "intaxabo_kataal": 10
+        },
+        {
+            "id": 2,
+            "badeeco": "Bur",
+            "barcode": "2982899",
+            "intaxabo_kataal": 8
+        },
+        {
+            "id": 3,
+            "badeeco": "Caano",
+            "barcode": "8976875",
+            "intaxabo_kataal": 5
+        },
+        {
+            "id": 4,
+            "badeeco": "Bariis",
+            "barcode": "44256576",
+            "intaxabo_kataal": 7
+        }
+    ]
+}

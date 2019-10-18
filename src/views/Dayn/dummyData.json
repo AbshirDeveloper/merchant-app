@@ -1,0 +1,62 @@
+{
+    "columnDefs": [
+        {
+            "DisplayName": "Magac",
+            "Name": "magac",
+            "CanShow": true
+        },
+        {
+            "DisplayName": "Taariikh",
+            "Name": "taariikh",
+            "CanShow": true
+        },
+        {
+            "DisplayName": "Taariikhda bixinta",
+            "Name": "taariikhda-bixinta",
+            "CanShow": true
+        },
+        {
+            "DisplayName": "Taleefon",
+            "Name": "talefon",
+            "CanShow": true
+        },
+        {
+            "DisplayName": "Magaalada",
+            "Name": "magalada",
+            "CanShow": true
+        },
+        {
+            "DisplayName": "Badeeco",
+            "Name": "badeeco",
+            "CanShow": true
+        },
+        {
+            "DisplayName": "Totalka",
+            "Name": "totalka",
+            "CanShow": true
+        }
+    ],
+    "rowData": [
+        {
+            "magac": "Toyota",
+            "taleefon": "Celica",
+            "magaalada": "35000",
+            "badeeco": "14",
+            "totalka": "54"
+        },
+        {
+            "magac": "Toyota",
+            "taleefon": "Celica",
+            "magaalada": "35000",
+            "badeeco": "14",
+            "totalka": "54"
+        },
+        {
+            "magac": "Toyota",
+            "taleefon": "Celica",
+            "magaalada": "35000",
+            "badeeco": "14",
+            "totalka": "54"
+        }
+    ]
+}

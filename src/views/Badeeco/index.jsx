@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-
+import AgGrid from '../../common/grid'
 import { createStyles, withStyles } from '@material-ui/styles';
+import { connect } from 'react-redux'
+import * as actions from './actions'
 
 const useStyles = createStyles({
     root: {
@@ -9,14 +11,33 @@ const useStyles = createStyles({
 });
 
 class Badeeco extends Component {
+    constructor(props) {
+        super(props)
+    }
+
+    componentDidMount() {
+        this.props.getAllBadeeco()
+    }
     render() {
         const { classes } = this.props
         return (
             <div className={classes.root}>
-                <span>Badeeco</span>
+                <div style={{ width: '100%', display: 'inline-flex' }}>
+                    <AgGrid columnDefs={this.props.data.columnDefs} rowData={this.props.data.rowData} />
+                </div>
             </div>
         );
     }
 }
 
-export default withStyles(useStyles)(Badeeco);
+const mapStateToProps = (state) => {
+    return {
+        data: state.badeeco.data
+    }
+}
+
+const mapDispatchToProps = {
+    ...actions
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(useStyles)(Badeeco));

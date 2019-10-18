@@ -65,6 +65,11 @@ const Sidebar = props => {
       href: '/amaano',
       icon: <TextFieldsIcon />
     },
+    {
+      title: 'Sign In',
+      href: '/signin',
+      icon: <TextFieldsIcon />
+    },
   ];
 
   return (

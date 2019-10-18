@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { createStyles, useTheme, withStyles } from '@material-ui/styles';
 import { useMediaQuery } from '@material-ui/core';
+import { connect } from 'react-redux'
 
 import { Sidebar, Topbar, Footer } from './components';
 
@@ -23,22 +24,15 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      openSidebar: false,
-      isDesktop: false
     };
   }
 
   handleSidebarOpen = () => {
-    this.setState({
-      openSidebar: !this.state.openSidebar,
-      isDesktop: !this.state.isDesktop
-    });
-  };
-
-  handleSidebarClose = () => {
-    this.setState({
-      openSidebar: false
-    });
+    if (this.props.openSidebar) {
+      this.props.handleCloseSideBar()
+    } else {
+      this.props.handleOpenSideBar()
+    }
   };
 
   render() {
@@ -47,13 +41,13 @@ class Main extends React.Component {
       <div
         className={clsx({
           [classes.root]: true,
-          [classes.shiftContent]: this.state.isDesktop
+          [classes.shiftContent]: this.props.isDesktop
         })}>
         <Topbar onSidebarOpen={this.handleSidebarOpen} />
         <Sidebar
-          onClose={this.handleSidebarClose}
-          open={this.state.openSidebar}
-          variant={this.state.isDesktop ? 'persistent' : 'temporary'}
+          onClose={this.handleSidebarOpen}
+          open={this.props.openSidebar}
+          variant={this.props.isDesktop ? 'persistent' : 'temporary'}
         />
         <main className={classes.content}>
           {children}
@@ -68,4 +62,24 @@ Main.propTypes = {
   children: PropTypes.node
 };
 
-export default withStyles(useStyles)(Main);
+const mapStateToProps = (state) => {
+  return {
+    openSidebar: state.main.menu,
+    isDesktop: state.main.isDesktop
+  }
+};
+
+export default withStyles(useStyles)(connect(mapStateToProps, {
+  handleOpenSideBar: () => {
+    return {
+      type: 'menu',
+      payload: true
+    }
+  },
+  handleCloseSideBar: () => {
+    return {
+      type: 'menu',
+      payload: false
+    }
+  }
+})(Main));

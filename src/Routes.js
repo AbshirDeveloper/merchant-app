@@ -5,7 +5,7 @@ import { RouteWithLayout } from './components';
 import { Main as MainLayout } from './layouts';
 
 import {
-  Iibsi, Xisaabiye, Dayn, Badeeco, Amaano
+  Iibsi, Xisaabiye, Dayn, Badeeco, Amaano, SignIn
 } from './views';
 
 const Routes = () => {
@@ -45,6 +45,12 @@ const Routes = () => {
         exact
         layout={MainLayout}
         path="/amaano"
+      />
+      <RouteWithLayout
+        component={SignIn}
+        exact
+        layout={MainLayout}
+        path="/signin"
       />
       <Redirect to="/not-found" />
     </Switch>
