@@ -21,25 +21,29 @@
             "id": 1,
             "badeeco": "Saliid",
             "barcode": "7657657",
-            "intaxabo_kataal": 10
+            "intaxabo_kataal": 10,
+            "qiimo_halkii_xabo": 4
         },
         {
             "id": 2,
             "badeeco": "Bur",
             "barcode": "2982899",
-            "intaxabo_kataal": 8
+            "intaxabo_kataal": 8,
+            "qiimo_halkii_xabo": 6
         },
         {
             "id": 3,
             "badeeco": "Caano",
             "barcode": "8976875",
-            "intaxabo_kataal": 5
+            "intaxabo_kataal": 5,
+            "qiimo_halkii_xabo": 9
         },
         {
             "id": 4,
             "badeeco": "Bariis",
             "barcode": "44256576",
-            "intaxabo_kataal": 7
+            "intaxabo_kataal": 7,
+            "qiimo_halkii_xabo": 9
         }
     ]
 }

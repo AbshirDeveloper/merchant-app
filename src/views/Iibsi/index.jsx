@@ -3,8 +3,12 @@ import { createStyles, withStyles } from '@material-ui/styles';
 import { connect } from 'react-redux'
 import * as actions from './actions'
 import AgGrid from '../../common/grid'
-import DynamicCard from '../../common/Card'
+import DynamicCard from '../../common/DynamicCard'
 import Search from '../../common/Search'
+import Card from './components/Card'
+import DefaultCard from './components/defaultCard'
+import './index.css'
+import Popper from './components/Popper'
 
 const useStyles = createStyles({
     root: {
@@ -26,6 +30,9 @@ const useStyles = createStyles({
         marginLeft: 8,
         marginRight: 0,
     },
+    wrapper: {
+        backgroundColor: 'yellow'
+    }
 });
 
 class Iibsi extends Component {
@@ -91,7 +98,41 @@ class Iibsi extends Component {
                         label: 'Submit'
                     }
                 ]
-            }
+            },
+            mainMerchangt: [
+                {
+                    id: 1,
+                    magac: 'Xawaash',
+                    haraa: 22
+                },
+                {
+                    id: 2,
+                    magac: 'Saliid',
+                    haraa: 60
+                },
+                {
+                    id: 3,
+                    magac: 'Ukun',
+                    haraa: 5
+                },
+                {
+                    id: 4,
+                    magac: 'Xawaash',
+                    haraa: 22
+                },
+                {
+                    id: 5,
+                    magac: 'Saliid',
+                    haraa: 60
+                },
+                {
+                    id: 6,
+                    magac: 'Ukun',
+                    haraa: 5
+                }
+            ],
+            openPopper: false,
+            selectedProduct: {}
         }
     }
 
@@ -104,9 +145,38 @@ class Iibsi extends Component {
         this.props.addProductToCart(obj)
     }
 
+    cardClicked = (obj) => {
+        const newObj = {
+            ...obj,
+            barcode: obj.barcode,
+            badeeco: obj.badeeco,
+            qiimo_halkii_xabo: obj.qiimo_halkii_xabo,
+            iskudar: 1 * obj.qiimo_halkii_xabo
+        }
+        this.setState({
+            selectedProduct: newObj,
+            openPopper: true
+        })
+    }
+
+    handleClickAway = () => {
+        this.setState({
+            openPopper: false
+        })
+    }
+
+    handleContinueFromPopper = (newObj) => {
+        this.props.addProductToCart(newObj)
+        this.handleClosePopper()
+    }
+
+    handleClosePopper = () => {
+        this.setState({
+            openPopper: false
+        })
+    }
 
     render() {
-
         const { classes } = this.props
         const cartSummary = this.props.cart.rowData.map(el => {
             return {
@@ -118,11 +188,36 @@ class Iibsi extends Component {
         const cartTotal = totals && totals.reduce((accumulator, currentValue) => accumulator + currentValue)
         return (
             <div className={classes.root}>
-                <Search classes={classes} badeeco={this.props.badeeco} objectSearched={this.objectSearched} />
-                <div style={{ width: '65%', display: 'inline-block' }}>
+                <Popper
+                    open={this.state.openPopper}
+                    selectedProduct={this.state.selectedProduct}
+                    handleContinueFromPopper={this.handleContinueFromPopper}
+                    handleClosePopper={this.handleClosePopper}
+                />
+                <div className="leftSection">
+                    <Search classes={classes} badeeco={this.props.badeeco} objectSearched={this.objectSearched} />
+                    <div>
+                        {
+                            this.props.badeeco.rowData && this.props.badeeco.rowData.map(el => {
+                                return (
+                                    <div onClick={() => this.cardClicked(el)} key={el.id}>
+                                        <DynamicCard>
+                                            <div style={{ width: '100%' }}>
+                                                <DefaultCard badeeco={el} />
+                                            </div>
+                                        </DynamicCard>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+                <div style={{ width: '38%', display: 'inline-block' }}>
                     <AgGrid columnDefs={this.props.cart.columnDefs} rowData={this.props.cart.rowData} />
                 </div>
-                <DynamicCard formElements={this.state.formElements} cartTotal={cartTotal} cartSummary={cartSummary} classes={classes} />
+                <DynamicCard>
+                    <Card formElements={this.state.formElements} cartTotal={cartTotal} cartSummary={cartSummary} classes={classes} />
+                </DynamicCard>
             </div >
         );
     }

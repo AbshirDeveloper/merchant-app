@@ -7,7 +7,8 @@ import { AppBar, Toolbar, Badge, Hidden, IconButton } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
 import InputIcon from '@material-ui/icons/Input';
-
+import Navigation from '../Navigation'
+import './index.css'
 const useStyles = createStyles({
   root: {
     boxShadow: 'none'
@@ -50,12 +51,20 @@ class Topbar extends React.Component {
               <InputIcon />
             </IconButton>
           </Hidden>
-          <Hidden>
+          {/* <Hidden>
             <IconButton color="inherit" onClick={onSidebarOpen}>
               <MenuIcon />
             </IconButton>
-          </Hidden>
+          </Hidden> */}
         </Toolbar>
+        <div className="nav" style={{
+          width: '66%',
+          marginLeft: '8%',
+          position: 'absolute',
+          marginTop: '7px'
+        }}>
+          <Navigation />
+        </div>
       </AppBar>
     );
   }

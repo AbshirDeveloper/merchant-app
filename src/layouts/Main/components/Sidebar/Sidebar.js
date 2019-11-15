@@ -55,21 +55,21 @@ const Sidebar = props => {
       href: '/xisaabiye',
       icon: <ShoppingBasketIcon />
     },
-    {
-      title: 'Dayn',
-      href: '/Dayn',
-      icon: <LockOpenIcon />
-    },
-    {
-      title: 'Amaano',
-      href: '/amaano',
-      icon: <TextFieldsIcon />
-    },
-    {
-      title: 'Sign In',
-      href: '/signin',
-      icon: <TextFieldsIcon />
-    },
+    // {
+    //   title: 'Dayn',
+    //   href: '/Dayn',
+    //   icon: <LockOpenIcon />
+    // },
+    // {
+    //   title: 'Amaano',
+    //   href: '/amaano',
+    //   icon: <TextFieldsIcon />
+    // },
+    // {
+    //   title: 'Sign In',
+    //   href: '/signin',
+    //   icon: <TextFieldsIcon />
+    // },
   ];
 
   return (

@@ -6,6 +6,7 @@ import {
     DefaultColDef, StatusBar, SideBar, ColumnTypes, enhance
 } from './constants';
 import { connect } from 'react-redux';
+import './index.css'
 
 
 class AgGrid extends Component {
@@ -36,7 +37,6 @@ class AgGrid extends Component {
 
     componentDidMount() {
         setTimeout(() => {
-            console.log(this.props)
             this._gridApi && this._gridApi.sizeColumnsToFit();
         }, 0)
     }
@@ -60,15 +60,16 @@ class AgGrid extends Component {
 
     render() {
         const columnDefs = enhance(this.props.columnDefs, {
-            showSelectColumn: true,
+            showSelectColumn: !!this.props.columnDefs ? !!this.props.columnDefs.length : false,
             disableSortColumnsList: []
         })
         return (
             <div
                 className="ag-theme-balham"
                 style={{
+                    minHeight: '150px',
                     height: '100%',
-                    width: '101%'
+                    width: '100%'
                 }}
             >
                 <AgGridReact
@@ -76,8 +77,8 @@ class AgGrid extends Component {
                     columnDefs={columnDefs}
                     rowData={this.props.rowData}
                     onGridReady={this.handleOnGridReady}
-                >
-                </AgGridReact>
+                    domLayout='autoHeight'
+                />
             </div>
         );
     }

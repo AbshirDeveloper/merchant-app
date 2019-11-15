@@ -1,0 +1,60 @@
+.leftSection {
+    width: 33%
+}
+
+.leftSection > div:nth-child(2) {
+    width: 96% !important;
+    display: inline-block;
+}
+
+.leftSection div:nth-child(2)  div  div {
+    width: 100% !important;
+}
+
+.leftSection div:nth-child(2) div  {
+    width: 33% !important;
+    /* height: 95px; */
+    display: inline-block;
+    /* display: grid; */
+}
+
+
+.leftSection div:nth-child(2) div button:hover {
+    background-color: rgba(179, 210, 190, 0.8);
+    width: 100%;
+}
+
+.leftSection div:nth-child(2) div button {
+    width: 100%;
+}
+
+
+.popperClass {
+    top: -300px !important
+}
+
+.popperClass > div > div {
+    width: 576px;
+    height: 32%;
+    border-radius: 20px;
+}
+
+.inputField {
+    width: 100%
+}
+
+.productName > h2 {
+    font-size: 25px;
+    color: green;
+}
+
+.price {
+    width: 40%;
+    display: inline-block;
+    margin: 12px !important;
+}
+
+.price > h2 {
+    float: right;
+    font-size: 50px;
+}

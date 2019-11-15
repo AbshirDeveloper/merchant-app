@@ -1,0 +1,14 @@
+.cards > div > div div {
+    width: 100% !important;
+}
+
+.card > div {
+    width: 98% !important;
+    margin: 1%
+}
+
+.parent > div:nth-child(2) {
+    width: 69% !important;
+    float: left;
+    margin-left: 1%;
+}

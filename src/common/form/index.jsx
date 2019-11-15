@@ -77,6 +77,9 @@ class TextFields extends React.Component {
                     name={el.name}
                     onChange={this.onChange}
                     className={clsx(classes.textField, classes.dense)}
+                    style={{
+                        maxWidth: '200px'
+                    }}
                     margin="dense"
                 />
             )
@@ -103,6 +106,9 @@ class TextFields extends React.Component {
                         MenuProps: {
                             className: classes.menu,
                         },
+                    }}
+                    style={{
+                        maxWidth: '200px'
                     }}
                     margin="dense"
                 >
@@ -132,6 +138,10 @@ class TextFields extends React.Component {
                     InputLabelProps={{
                         shrink: true,
                     }}
+                    style={{
+                        maxWidth: '200px'
+                    }}
+                    margin="dense"
                 />
             )
         })
@@ -147,6 +157,7 @@ class TextFields extends React.Component {
                     style={{
                         // height: '46px',
                         color: 'red',
+                        display: 'inline-block'
                         // marginTop: '76px'
                     }}
                     variant="outlined"

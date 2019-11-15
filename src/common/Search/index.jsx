@@ -48,7 +48,8 @@ class Search extends Component {
         return (
             <div style={{
                 marginRight: '-4px',
-                width: '29%'
+                width: '100%',
+                marginTop: '4px'
             }}>
                 <form onSubmit={this.onFormSubmit} className={this.props.classes.form}>
                     <TextField
@@ -65,7 +66,7 @@ class Search extends Component {
                         margin="normal"
                         variant="outlined"
                         style={{
-                            width: '70%'
+                            width: '80%'
                         }}
                     />
                     <Button

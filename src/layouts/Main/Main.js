@@ -10,7 +10,10 @@ import { Sidebar, Topbar, Footer } from './components';
 const useStyles = createStyles({
   root: {
     paddingTop: 56,
-    height: '100%'
+    height: '100%',
+    '& header': {
+      backgroundColor: '#6c82ff'
+    }
   },
   shiftContent: {
     paddingLeft: 240

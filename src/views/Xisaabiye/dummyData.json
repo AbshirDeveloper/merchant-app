@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "type": "dayn",
+        "columnDefs": [
+            {
+                "id": 1,
+                "DisplayName": "Magac",
+                "Name": "magac",
+                "CanShow": true
+            },
+            {
+                "id": 2,
+                "DisplayName": "Taariikh",
+                "Name": "taariikh",
+                "CanShow": true
+            },
+            {
+                "id": 3,
+                "DisplayName": "Taariikhda bixinta",
+                "Name": "taariikhda-bixinta",
+                "Type": "date",
+                "CanShow": true
+            },
+            {
+                "id": 4,
+                "DisplayName": "Taleefon",
+                "Name": "talefon",
+                "CanShow": true
+            },
+            {
+                "id": 5,
+                "DisplayName": "Invoice",
+                "Name": "invoice",
+                "CanShow": true
+            },
+            {
+                "id": 6,
+                "DisplayName": "Iskudar",
+                "Name": "iskudar",
+                "CanShow": true
+            }
+        ],
+        "rowData": [
+            {
+                "magac": "Abshir Jama",
+                "taariikh": "03/01/2019",
+                "taariikhda-bixinta": "04/01/2019",
+                "talefon": "3124093514",
+                "invoice": "14",
+                "iskudar": "54"
+            }
+        ],
+        "cards": [
+            {
+                "id": 1,
+                "column": "iskudar",
+                "description": "Iskudar",
+                "valueColor": "grey",
+                "nameColor": "green"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "type": "amano",
+        "columnDefs": [
+            {
+                "id": 7,
+                "DisplayName": "Magac",
+                "Name": "magac",
+                "CanShow": true
+            },
+            {
+                "id": 8,
+                "DisplayName": "Taariikh",
+                "Name": "taariikh",
+                "Type": "date",
+                "CanShow": true
+            },
+            {
+                "id": 9,
+                "DisplayName": "Taleefon",
+                "Name": "talefon",
+                "CanShow": true
+            },
+            {
+                "id": 10,
+                "DisplayName": "Iskudar",
+                "Name": "iskudar",
+                "CanShow": true
+            }
+        ],
+        "rowData": [
+            {
+                "magac": "Ahmed Abdi",
+                "taariikh": "08/01/2019",
+                "talefon": "2247636417",
+                "iskudar": "54"
+            }
+        ],
+        "cards": [
+            {
+                "id": 2,
+                "column": "iskudar",
+                "description": "Iskudar",
+                "valueColor": "grey",
+                "nameColor": "green"
+            }
+        ]
+    }
+]

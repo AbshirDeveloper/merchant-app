@@ -117,11 +117,30 @@ function badeeco(state = badeecoState, actions) {
     }
 }
 
+const xisaabiyeState = {
+    data: {}
+}
+
+function xisaabiye(state = xisaabiyeState, actions) {
+    switch (actions.type) {
+        case 'getXisaabiye':
+            return {
+                ...state,
+                data: actions.payload
+            }
+        default:
+            return {
+                ...state
+            }
+    }
+}
+
 export default combineReducers({
     iibsi,
     main,
     dayn,
     amano,
-    badeeco
+    badeeco,
+    xisaabiye
 })
 
